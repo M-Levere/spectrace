@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="CheckoutTests" tests="3" passed="2" failures="1" errors="0" skipped="0" time="0.037" timestamp="2024-11-15T10:00:00">
+    <testcase name="CalculateTotal_MultipleItems_ReturnsCorrectSum" classname="SpecTrace.Demo.Tests.CheckoutTests" time="0.018" />
+    <testcase name="ApplyDiscount_TenPercent_ReturnsCorrectAmount" classname="SpecTrace.Demo.Tests.CheckoutTests" time="0.012">
+      <failure message="Assert.Equal() Failure&#xA;Expected: 90&#xA;Actual:   90.00000000001&#xA;Values are not equal." type="Xunit.Sdk.EqualException">
+   at SpecTrace.Demo.Tests.CheckoutTests.ApplyDiscount_TenPercent_ReturnsCorrectAmount() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/CheckoutTests.cs:line 18
+      </failure>
+    </testcase>
+    <testcase name="CalculateTotal_EmptyCart_ReturnsZero" classname="SpecTrace.Demo.Tests.CheckoutTests" time="0.007" />  </testsuite>
+</testsuites>

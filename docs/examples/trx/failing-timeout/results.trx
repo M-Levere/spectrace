@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5bc0f099-8c99-4b38-b2af-e07ce13dbfd5" name="SpecTrace Demo failing-timeout run" runUser="demo-runner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-11-15T10:00:00.0000000+00:00" queuing="2024-11-15T10:00:00.0000000+00:00" start="2024-11-15T10:00:00.0000000+00:00" finish="2024-11-15T10:00:01.5000000+00:00" />
+  <TestSettings name="default" id="8a615864-545c-4f07-83f5-e51b33c1b804" />
+  <Results>
+    <UnitTestResult executionId="475d1ebe-3ed7-4581-b2f5-1730570dcf46" testId="0dbf4baf-ef55-410c-a851-e0aee2a73d90" testName="SearchByKeyword_KnownProduct_ReturnsResults" computerName="CI-AGENT" duration="00:00:00.0320000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0320000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="138a272d-19f1-4f0b-9b7e-c2b48ac58b78" testId="4a450878-d206-455f-9749-2a2da3b4e180" testName="SearchByKeyword_UnknownProduct_ReturnsEmpty" computerName="CI-AGENT" duration="00:00:00.0090000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0090000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="58ccb1e8-be07-4efa-b5c0-c286c452d6e3" testId="d290fe2d-512c-4596-b091-eaaaa4264993" testName="SearchByKeyword_SlowApi_TimesOut" computerName="CI-AGENT" duration="00:00:01.0010000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:01.0010000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Timeout" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50">
+      <Output><ErrorInfo><Message>Test exceeded execution timeout of 1000 milliseconds.</Message><StackTrace>   at SpecTrace.Demo.Tests.SearchTests.SearchByKeyword_SlowApi_TimesOut() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/SearchTests.cs:line 22</StackTrace></ErrorInfo></Output>
+    </UnitTestResult>  </Results>
+  <TestDefinitions>
+    <UnitTest name="SearchByKeyword_KnownProduct_ReturnsResults" storage="spectrace.demo.tests.dll" id="0dbf4baf-ef55-410c-a851-e0aee2a73d90">
+      <Execution id="475d1ebe-3ed7-4581-b2f5-1730570dcf46" />
+      <TestMethod className="SpecTrace.Demo.Tests.SearchTests" name="SearchByKeyword_KnownProduct_ReturnsResults" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="SearchByKeyword_UnknownProduct_ReturnsEmpty" storage="spectrace.demo.tests.dll" id="4a450878-d206-455f-9749-2a2da3b4e180">
+      <Execution id="138a272d-19f1-4f0b-9b7e-c2b48ac58b78" />
+      <TestMethod className="SpecTrace.Demo.Tests.SearchTests" name="SearchByKeyword_UnknownProduct_ReturnsEmpty" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="SearchByKeyword_SlowApi_TimesOut" storage="spectrace.demo.tests.dll" id="d290fe2d-512c-4596-b091-eaaaa4264993">
+      <Execution id="58ccb1e8-be07-4efa-b5c0-c286c452d6e3" />
+      <TestMethod className="SpecTrace.Demo.Tests.SearchTests" name="SearchByKeyword_SlowApi_TimesOut" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0dbf4baf-ef55-410c-a851-e0aee2a73d90" executionId="475d1ebe-3ed7-4581-b2f5-1730570dcf46" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50" />
+    <TestEntry testId="4a450878-d206-455f-9749-2a2da3b4e180" executionId="138a272d-19f1-4f0b-9b7e-c2b48ac58b78" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50" />
+    <TestEntry testId="d290fe2d-512c-4596-b091-eaaaa4264993" executionId="58ccb1e8-be07-4efa-b5c0-c286c452d6e3" testListId="a540177a-e658-4aec-8a6e-1794b0c62e50" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="a540177a-e658-4aec-8a6e-1794b0c62e50" />
+    <TestList name="All Loaded Results" id="65bc9a58-f911-4877-b37d-be622659527c" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="1" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

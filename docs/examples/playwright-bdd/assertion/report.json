@@ -1,0 +1,327 @@
+﻿{
+    "config":  {
+                   "configFile":  "C:/code/spectrace/scripts/../demo/playwright-bdd/playwright.config.ts",
+                   "rootDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd",
+                   "forbidOnly":  false,
+                   "fullyParallel":  false,
+                   "globalSetup":  null,
+                   "globalTeardown":  null,
+                   "globalTimeout":  0,
+                   "grep":  "(?:)",
+                   "grepInvert":  null,
+                   "maxFailures":  0,
+                   "metadata":  {
+
+                                },
+                   "preserveOutput":  "always",
+                   "reporter":  [
+                                    "json",
+                                    {
+                                        "outputFile":  "test-results/report.json"
+                                    }
+                                ],
+                   "reportSlowTests":  {
+                                           "max":  5,
+                                           "threshold":  15000
+                                       },
+                   "quiet":  false,
+                   "projects":  [
+                                    {
+                                        "outputDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/test-results",
+                                        "repeatEach":  1,
+                                        "retries":  0,
+                                        "id":  "chromium",
+                                        "name":  "chromium",
+                                        "testDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/.features-gen",
+                                        "testIgnore":  [
+
+                                                       ],
+                                        "testMatch":  [
+                                                          "**/*.spec.ts"
+                                                      ],
+                                        "timeout":  30000
+                                    }
+                                ],
+                   "version":  "1.48.0",
+                   "workers":  1
+               },
+    "suites":  [
+                   {
+                       "title":  "features/dashboard.feature.spec.ts",
+                       "file":  "features/dashboard.feature",
+                       "column":  0,
+                       "line":  0,
+                       "specs":  [
+
+                                 ],
+                       "suites":  [
+                                      {
+                                          "title":  "Analytics Dashboard",
+                                          "file":  "features/dashboard.feature",
+                                          "line":  1,
+                                          "column":  0,
+                                          "specs":  [
+
+                                                    ],
+                                          "suites":  [
+                                                         {
+                                                             "title":  "View daily active users metric",
+                                                             "file":  "features/dashboard.feature",
+                                                             "line":  7,
+                                                             "column":  0,
+                                                             "specs":  [
+                                                                           {
+                                                                               "title":  "View daily active users metric",
+                                                                               "ok":  false,
+                                                                               "tags":  [
+
+                                                                                        ],
+                                                                               "tests":  [
+                                                                                             {
+                                                                                                 "timeout":  30000,
+                                                                                                 "annotations":  [
+
+                                                                                                                 ],
+                                                                                                 "expectedStatus":  "failed",
+                                                                                                 "projectId":  "chromium",
+                                                                                                 "projectName":  "chromium",
+                                                                                                 "results":  [
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "failed",
+                                                                                                                     "duration":  4262,
+                                                                                                                     "errors":  [
+                                                                                                                                    {
+                                                                                                                                        "message":  "expect(received).toBeGreaterThan(expected)\n\nExpected: \u003e 100\nReceived:   0\n\nThe daily active users metric returned 0. The analytics pipeline may not have processed data for the selected range yet.",
+                                                                                                                                        "value":  "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: \u003e 100\nReceived:   0\n    at steps/dashboard.steps.ts:24:18\n    at Test.\u003canonymous\u003e (.features-gen/dashboard.feature.spec.ts:41:5)"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  0,
+                                                                                                                     "startTime":  "2024-11-15T10:15:00.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/assertion-chromium/trace.zip"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "name":  "screenshot",
+                                                                                                                                             "contentType":  "image/png",
+                                                                                                                                             "path":  "test-results/assertion-chromium/screenshot-on-failure.png"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:15:00.000Z",
+                                                                                                                                       "duration":  702,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am logged in as an admin user",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:15:00.702Z",
+                                                                                                                                       "duration":  1834,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/login\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:00.702Z",
+                                                                                                                                                         "duration":  812,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027admin@example.com\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:01.514Z",
+                                                                                                                                                         "duration":  44,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027AdminPass456\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:01.558Z",
+                                                                                                                                                         "duration":  41,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:01.599Z",
+                                                                                                                                                         "duration":  610,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(page).toHaveURL(\u0027/dashboard\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:02.209Z",
+                                                                                                                                                         "duration":  327,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I navigate to the analytics dashboard",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:15:02.536Z",
+                                                                                                                                       "duration":  934,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:02.536Z",
+                                                                                                                                                         "duration":  230,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(page).toHaveURL(\u0027/analytics\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:02.766Z",
+                                                                                                                                                         "duration":  704,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I select the date range \"Last 7 days\"",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:15:03.470Z",
+                                                                                                                                       "duration":  623,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:03.470Z",
+                                                                                                                                                         "duration":  210,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:03.680Z",
+                                                                                                                                                         "duration":  201,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:03.881Z",
+                                                                                                                                                         "duration":  212,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Then the daily active users count should be greater than 100",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:15:04.093Z",
+                                                                                                                                       "duration":  45,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.innerText()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:04.093Z",
+                                                                                                                                                         "duration":  12,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  {
+                                                                                                                                                     "message":  "expect(received).toBeGreaterThan(expected)\n\nExpected: \u003e 100\nReceived:   0\n\nThe daily active users metric returned 0. The analytics pipeline may not have processed data for the selected range yet.",
+                                                                                                                                                     "value":  "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: \u003e 100\nReceived:   0\n    at steps/dashboard.steps.ts:24:18\n    at Test.\u003canonymous\u003e (.features-gen/dashboard.feature.spec.ts:41:5)"
+                                                                                                                                                 }
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:15:04.138Z",
+                                                                                                                                       "duration":  124,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.screenshot()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:15:04.138Z",
+                                                                                                                                                         "duration":  120,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 }
+                                                                                                             ],
+                                                                                                 "status":  "unexpected"
+                                                                                             }
+                                                                                         ],
+                                                                               "id":  "a1184ee9b25f",
+                                                                               "file":  "features/dashboard.feature",
+                                                                               "line":  7
+                                                                           }
+                                                                       ]
+                                                         }
+                                                     ]
+                                      }
+                                  ]
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "stats":  {
+                  "startTime":  "2024-11-15T10:15:00.000Z",
+                  "duration":  4262,
+                  "expected":  0,
+                  "skipped":  0,
+                  "unexpected":  1,
+                  "flaky":  0
+              }
+}

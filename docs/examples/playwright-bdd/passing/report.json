@@ -1,0 +1,275 @@
+﻿{
+    "config":  {
+                   "configFile":  "C:/code/spectrace/scripts/../demo/playwright-bdd/playwright.config.ts",
+                   "rootDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd",
+                   "forbidOnly":  false,
+                   "fullyParallel":  false,
+                   "globalSetup":  null,
+                   "globalTeardown":  null,
+                   "globalTimeout":  0,
+                   "grep":  "(?:)",
+                   "grepInvert":  null,
+                   "maxFailures":  0,
+                   "metadata":  {
+
+                                },
+                   "preserveOutput":  "always",
+                   "reporter":  [
+                                    "json",
+                                    {
+                                        "outputFile":  "test-results/report.json"
+                                    }
+                                ],
+                   "reportSlowTests":  {
+                                           "max":  5,
+                                           "threshold":  15000
+                                       },
+                   "quiet":  false,
+                   "projects":  [
+                                    {
+                                        "outputDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/test-results",
+                                        "repeatEach":  1,
+                                        "retries":  0,
+                                        "id":  "chromium",
+                                        "name":  "chromium",
+                                        "testDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/.features-gen",
+                                        "testIgnore":  [
+
+                                                       ],
+                                        "testMatch":  [
+                                                          "**/*.spec.ts"
+                                                      ],
+                                        "timeout":  30000
+                                    }
+                                ],
+                   "version":  "1.48.0",
+                   "workers":  1
+               },
+    "suites":  [
+                   {
+                       "title":  "features/login.feature.spec.ts",
+                       "file":  "features/login.feature",
+                       "column":  0,
+                       "line":  0,
+                       "specs":  [
+
+                                 ],
+                       "suites":  [
+                                      {
+                                          "title":  "User Login",
+                                          "file":  "features/login.feature",
+                                          "line":  1,
+                                          "column":  0,
+                                          "specs":  [
+
+                                                    ],
+                                          "suites":  [
+                                                         {
+                                                             "title":  "Successful login with valid credentials",
+                                                             "file":  "features/login.feature",
+                                                             "line":  7,
+                                                             "column":  0,
+                                                             "specs":  [
+                                                                           {
+                                                                               "title":  "Successful login with valid credentials",
+                                                                               "ok":  true,
+                                                                               "tags":  [
+
+                                                                                        ],
+                                                                               "tests":  [
+                                                                                             {
+                                                                                                 "timeout":  30000,
+                                                                                                 "annotations":  [
+
+                                                                                                                 ],
+                                                                                                 "expectedStatus":  "passed",
+                                                                                                 "projectId":  "chromium",
+                                                                                                 "projectName":  "chromium",
+                                                                                                 "results":  [
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "passed",
+                                                                                                                     "duration":  2341,
+                                                                                                                     "errors":  [
+
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  0,
+                                                                                                                     "startTime":  "2024-11-15T10:00:00.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/passing-chromium/trace.zip"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:00:00.000Z",
+                                                                                                                                       "duration":  523,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am on the login page",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:00.523Z",
+                                                                                                                                       "duration":  312,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/login\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:00.523Z",
+                                                                                                                                                         "duration":  300,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I enter username \"test@example.com\"",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:00.835Z",
+                                                                                                                                       "duration":  48,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027test@example.com\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:00.835Z",
+                                                                                                                                                         "duration":  45,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I enter password \"SecurePass123\"",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:00.883Z",
+                                                                                                                                       "duration":  42,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027SecurePass123\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:00.883Z",
+                                                                                                                                                         "duration":  40,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I click the login button",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:00.925Z",
+                                                                                                                                       "duration":  634,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:00.925Z",
+                                                                                                                                                         "duration":  630,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Then I should be redirected to the dashboard",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:01.559Z",
+                                                                                                                                       "duration":  487,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(page).toHaveURL(\u0027/dashboard\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:01.559Z",
+                                                                                                                                                         "duration":  485,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I should see the welcome message \"Welcome back, Test User\"",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:02.046Z",
+                                                                                                                                       "duration":  245,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(locator).toContainText(\u0027Welcome back, Test User\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:00:02.046Z",
+                                                                                                                                                         "duration":  243,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:00:02.291Z",
+                                                                                                                                       "duration":  50,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 }
+                                                                                                             ],
+                                                                                                 "status":  "expected"
+                                                                                             }
+                                                                                         ],
+                                                                               "id":  "f0b356d0ee6e",
+                                                                               "file":  "features/login.feature",
+                                                                               "line":  7
+                                                                           }
+                                                                       ]
+                                                         }
+                                                     ]
+                                      }
+                                  ]
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "stats":  {
+                  "startTime":  "2024-11-15T10:00:00.000Z",
+                  "duration":  2341,
+                  "expected":  1,
+                  "skipped":  0,
+                  "unexpected":  0,
+                  "flaky":  0
+              }
+}

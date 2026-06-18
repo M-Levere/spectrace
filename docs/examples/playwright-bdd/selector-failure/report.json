@@ -1,0 +1,290 @@
+﻿{
+    "config":  {
+                   "configFile":  "C:/code/spectrace/scripts/../demo/playwright-bdd/playwright.config.ts",
+                   "rootDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd",
+                   "forbidOnly":  false,
+                   "fullyParallel":  false,
+                   "globalSetup":  null,
+                   "globalTeardown":  null,
+                   "globalTimeout":  0,
+                   "grep":  "(?:)",
+                   "grepInvert":  null,
+                   "maxFailures":  0,
+                   "metadata":  {
+
+                                },
+                   "preserveOutput":  "always",
+                   "reporter":  [
+                                    "json",
+                                    {
+                                        "outputFile":  "test-results/report.json"
+                                    }
+                                ],
+                   "reportSlowTests":  {
+                                           "max":  5,
+                                           "threshold":  15000
+                                       },
+                   "quiet":  false,
+                   "projects":  [
+                                    {
+                                        "outputDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/test-results",
+                                        "repeatEach":  1,
+                                        "retries":  0,
+                                        "id":  "chromium",
+                                        "name":  "chromium",
+                                        "testDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/.features-gen",
+                                        "testIgnore":  [
+
+                                                       ],
+                                        "testMatch":  [
+                                                          "**/*.spec.ts"
+                                                      ],
+                                        "timeout":  30000
+                                    }
+                                ],
+                   "version":  "1.48.0",
+                   "workers":  1
+               },
+    "suites":  [
+                   {
+                       "title":  "features/checkout.feature.spec.ts",
+                       "file":  "features/checkout.feature",
+                       "column":  0,
+                       "line":  0,
+                       "specs":  [
+
+                                 ],
+                       "suites":  [
+                                      {
+                                          "title":  "Shopping Cart Checkout",
+                                          "file":  "features/checkout.feature",
+                                          "line":  1,
+                                          "column":  0,
+                                          "specs":  [
+
+                                                    ],
+                                          "suites":  [
+                                                         {
+                                                             "title":  "Complete checkout with valid payment details",
+                                                             "file":  "features/checkout.feature",
+                                                             "line":  7,
+                                                             "column":  0,
+                                                             "specs":  [
+                                                                           {
+                                                                               "title":  "Complete checkout with valid payment details",
+                                                                               "ok":  false,
+                                                                               "tags":  [
+
+                                                                                        ],
+                                                                               "tests":  [
+                                                                                             {
+                                                                                                 "timeout":  30000,
+                                                                                                 "annotations":  [
+
+                                                                                                                 ],
+                                                                                                 "expectedStatus":  "failed",
+                                                                                                 "projectId":  "chromium",
+                                                                                                 "projectName":  "chromium",
+                                                                                                 "results":  [
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "failed",
+                                                                                                                     "duration":  33090,
+                                                                                                                     "errors":  [
+                                                                                                                                    {
+                                                                                                                                        "message":  "page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements",
+                                                                                                                                        "value":  "TimeoutError: page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements\n    at steps/checkout.steps.ts:20:42\n    at Test.\u003canonymous\u003e (.features-gen/checkout.feature.spec.ts:31:5)"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  0,
+                                                                                                                     "startTime":  "2024-11-15T10:05:00.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/selector-failure-chromium/trace.zip"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "name":  "screenshot",
+                                                                                                                                             "contentType":  "image/png",
+                                                                                                                                             "path":  "test-results/selector-failure-chromium/screenshot-on-failure.png"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:05:00.000Z",
+                                                                                                                                       "duration":  634,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am logged in and have items in my shopping cart",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:05:00.634Z",
+                                                                                                                                       "duration":  1243,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/cart\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:00.634Z",
+                                                                                                                                                         "duration":  1240,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I proceed to checkout",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:05:01.877Z",
+                                                                                                                                       "duration":  892,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:01.877Z",
+                                                                                                                                                         "duration":  320,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(page).toHaveURL(\u0027/checkout\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:02.197Z",
+                                                                                                                                                         "duration":  572,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I enter my shipping address",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:05:02.769Z",
+                                                                                                                                       "duration":  156,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027123 Main St\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:02.769Z",
+                                                                                                                                                         "duration":  52,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027Anytown\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:02.821Z",
+                                                                                                                                                         "duration":  50,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u002712345\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:02.871Z",
+                                                                                                                                                         "duration":  54,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I click the \"Place Order\" button",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:05:02.925Z",
+                                                                                                                                       "duration":  30045,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.locator(\u0027.checkout-btn.primary\u0027).click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:02.925Z",
+                                                                                                                                                         "duration":  30045,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  {
+                                                                                                                                                                       "message":  "page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements",
+                                                                                                                                                                       "value":  "TimeoutError: page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements\n    at steps/checkout.steps.ts:20:42\n    at Test.\u003canonymous\u003e (.features-gen/checkout.feature.spec.ts:31:5)"
+                                                                                                                                                                   }
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  {
+                                                                                                                                                     "message":  "page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements",
+                                                                                                                                                     "value":  "TimeoutError: page.locator(\u0027.checkout-btn.primary\u0027).click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\u0027.checkout-btn.primary\u0027)\n  -   selector resolved to 0 elements\n    at steps/checkout.steps.ts:20:42\n    at Test.\u003canonymous\u003e (.features-gen/checkout.feature.spec.ts:31:5)"
+                                                                                                                                                 }
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:05:32.970Z",
+                                                                                                                                       "duration":  120,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.screenshot()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:05:32.970Z",
+                                                                                                                                                         "duration":  115,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 }
+                                                                                                             ],
+                                                                                                 "status":  "unexpected"
+                                                                                             }
+                                                                                         ],
+                                                                               "id":  "af99dff5bc67",
+                                                                               "file":  "features/checkout.feature",
+                                                                               "line":  7
+                                                                           }
+                                                                       ]
+                                                         }
+                                                     ]
+                                      }
+                                  ]
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "stats":  {
+                  "startTime":  "2024-11-15T10:05:00.000Z",
+                  "duration":  33090,
+                  "expected":  0,
+                  "skipped":  0,
+                  "unexpected":  1,
+                  "flaky":  0
+              }
+}

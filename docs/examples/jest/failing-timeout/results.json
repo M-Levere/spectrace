@@ -1,0 +1,107 @@
+﻿{
+    "numFailedTestSuites":  1,
+    "numFailedTests":  1,
+    "numPassedTestSuites":  0,
+    "numPassedTests":  2,
+    "numPendingTestSuites":  0,
+    "numPendingTests":  0,
+    "numRuntimeErrorTestSuites":  0,
+    "numTodoTests":  0,
+    "numTotalTestSuites":  1,
+    "numTotalTests":  3,
+    "openHandles":  [
+
+                    ],
+    "snapshot":  {
+                     "added":  0,
+                     "didUpdate":  false,
+                     "failure":  false,
+                     "filesAdded":  0,
+                     "filesRemoved":  0,
+                     "filesRemovedList":  [
+
+                                          ],
+                     "filesUnmatched":  0,
+                     "filesUpdated":  0,
+                     "matched":  0,
+                     "total":  0,
+                     "unchecked":  0,
+                     "uncheckedKeyPath":  [
+
+                                          ],
+                     "unmatched":  0,
+                     "updated":  0
+                 },
+    "startTime":  1731657600000,
+    "success":  false,
+    "testResults":  [
+                        {
+                            "assertionResults":  [
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Product Search",
+                                                                                "Search by keyword"
+                                                                            ],
+                                                         "duration":  32,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Product Search Search by keyword returns results for a known keyword",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  6
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "returns results for a known keyword"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Product Search",
+                                                                                "Search by keyword"
+                                                                            ],
+                                                         "duration":  9,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Product Search Search by keyword returns empty array for unknown keyword",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  12
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "returns empty array for unknown keyword"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Product Search",
+                                                                                "Search by keyword"
+                                                                            ],
+                                                         "duration":  5001,
+                                                         "failureMessages":  [
+                                                                                 "Exceeded timeout of 5000ms for a test.\nAdd a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout.\n    at demo/jest/__tests__/search.test.ts:19:3"
+                                                                             ],
+                                                         "fullName":  "Product Search Search by keyword each result has a name and price",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  19
+                                                                      },
+                                                         "numPassingAsserts":  0,
+                                                         "status":  "failed",
+                                                         "title":  "each result has a name and price"
+                                                     }
+                                                 ],
+                            "endTime":  1731657602000,
+                            "message":  "  * Product Search \u003e Search by keyword \u003e each result has a name and price\n\n    Exceeded timeout of 5000ms for a test.",
+                            "startTime":  1731657600100,
+                            "status":  "failed",
+                            "testExecError":  null,
+                            "testFilePath":  "/code/spectrace/demo/jest/__tests__/search.test.ts"
+                        }
+                    ],
+    "wasInterrupted":  false
+}

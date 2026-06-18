@@ -1,0 +1,118 @@
+﻿{
+    "numFailedTestSuites":  1,
+    "numFailedTests":  1,
+    "numPassedTestSuites":  0,
+    "numPassedTests":  2,
+    "numPendingTestSuites":  0,
+    "numPendingTests":  0,
+    "numRuntimeErrorTestSuites":  0,
+    "numTodoTests":  0,
+    "numTotalTestSuites":  1,
+    "numTotalTests":  3,
+    "openHandles":  [
+
+                    ],
+    "snapshot":  {
+                     "added":  0,
+                     "didUpdate":  false,
+                     "failure":  false,
+                     "filesAdded":  0,
+                     "filesRemoved":  0,
+                     "filesRemovedList":  [
+
+                                          ],
+                     "filesUnmatched":  0,
+                     "filesUpdated":  0,
+                     "matched":  0,
+                     "total":  0,
+                     "unchecked":  0,
+                     "uncheckedKeyPath":  [
+
+                                          ],
+                     "unmatched":  0,
+                     "updated":  0
+                 },
+    "startTime":  1731657600000,
+    "success":  false,
+    "testResults":  [
+                        {
+                            "assertionResults":  [
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Shopping Cart Checkout",
+                                                                                "Order total calculation"
+                                                                            ],
+                                                         "duration":  18,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Shopping Cart Checkout Order total calculation calculates total correctly for multiple items",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  6
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "calculates total correctly for multiple items"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Shopping Cart Checkout",
+                                                                                "Order total calculation"
+                                                                            ],
+                                                         "duration":  12,
+                                                         "failureDetails":  [
+                                                                                {
+                                                                                    "matcherResult":  {
+                                                                                                          "actual":  90.00000000001,
+                                                                                                          "expected":  90,
+                                                                                                          "message":  "Expected: 90\nReceived: 90.00000000001",
+                                                                                                          "name":  "toBe",
+                                                                                                          "pass":  false
+                                                                                                      }
+                                                                                }
+                                                                            ],
+                                                         "failureMessages":  [
+                                                                                 "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 90\nReceived: 90.00000000001\n    at Object.\u003canonymous\u003e (demo/jest/__tests__/checkout.test.ts:15:32)"
+                                                                             ],
+                                                         "fullName":  "Shopping Cart Checkout Order total calculation applies 10% discount correctly",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  12
+                                                                      },
+                                                         "numPassingAsserts":  0,
+                                                         "status":  "failed",
+                                                         "title":  "applies 10% discount correctly"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Shopping Cart Checkout",
+                                                                                "Order total calculation"
+                                                                            ],
+                                                         "duration":  7,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Shopping Cart Checkout Order total calculation returns zero for empty cart",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  20
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "returns zero for empty cart"
+                                                     }
+                                                 ],
+                            "endTime":  1731657602000,
+                            "message":  "  * Shopping Cart Checkout \u003e Order total calculation \u003e applies 10% discount correctly\n\n    expect(received).toBe(expected)\n\n    Expected: 90\n    Received: 90.00000000001\n\n      13 |     it(\u0027applies 10% discount correctly\u0027, () =\u003e {\n      14 |       const discounted = applyDiscount(subtotal, 0.10);\n    \u003e 15 |       expect(discounted).toBe(90.00);\n         |                         ^\n      16 |     });\n\n      at Object.\u003canonymous\u003e (demo/jest/__tests__/checkout.test.ts:15:25)",
+                            "startTime":  1731657600100,
+                            "status":  "failed",
+                            "testExecError":  null,
+                            "testFilePath":  "/code/spectrace/demo/jest/__tests__/checkout.test.ts"
+                        }
+                    ],
+    "wasInterrupted":  false
+}

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="70744a60-0fa0-487a-b68e-5ff4d6154b19" name="SpecTrace Demo failing-assertion run" runUser="demo-runner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-11-15T10:00:00.0000000+00:00" queuing="2024-11-15T10:00:00.0000000+00:00" start="2024-11-15T10:00:00.0000000+00:00" finish="2024-11-15T10:00:01.5000000+00:00" />
+  <TestSettings name="default" id="2dd406f4-0d3d-4089-aa26-62c481b5a5ea" />
+  <Results>
+    <UnitTestResult executionId="2d54d6f1-ae96-4b34-a6b3-d4145cb920f2" testId="57f98e0d-988e-4e47-8a76-75455ec7a581" testName="CalculateTotal_MultipleItems_ReturnsCorrectSum" computerName="CI-AGENT" duration="00:00:00.0180000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0180000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="455c63a7-5d59-48f0-8013-0ccc7e8e9194" testId="bf3848df-cc40-403c-b041-0cdc429f3006" testName="ApplyDiscount_TenPercent_ReturnsCorrectAmount" computerName="CI-AGENT" duration="00:00:00.0120000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0120000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5">
+      <Output><ErrorInfo><Message>Assert.Equal() Failure&#xD;&#xA;Expected: 90&#xD;&#xA;Actual:   90.00000000001&#xD;&#xA;&#xD;&#xA;Values are not equal.</Message><StackTrace>   at SpecTrace.Demo.Tests.CheckoutTests.ApplyDiscount_TenPercent_ReturnsCorrectAmount() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/CheckoutTests.cs:line 18</StackTrace></ErrorInfo></Output>
+    </UnitTestResult>    <UnitTestResult executionId="82660a6e-af39-4bd8-947b-dd5b1afe6c56" testId="22de926d-9159-4824-8241-f28d7ce62091" testName="CalculateTotal_EmptyCart_ReturnsZero" computerName="CI-AGENT" duration="00:00:00.0070000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0070000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5">
+      <Output><StdOut /></Output>
+    </UnitTestResult>  </Results>
+  <TestDefinitions>
+    <UnitTest name="CalculateTotal_MultipleItems_ReturnsCorrectSum" storage="spectrace.demo.tests.dll" id="57f98e0d-988e-4e47-8a76-75455ec7a581">
+      <Execution id="2d54d6f1-ae96-4b34-a6b3-d4145cb920f2" />
+      <TestMethod className="SpecTrace.Demo.Tests.CheckoutTests" name="CalculateTotal_MultipleItems_ReturnsCorrectSum" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="ApplyDiscount_TenPercent_ReturnsCorrectAmount" storage="spectrace.demo.tests.dll" id="bf3848df-cc40-403c-b041-0cdc429f3006">
+      <Execution id="455c63a7-5d59-48f0-8013-0ccc7e8e9194" />
+      <TestMethod className="SpecTrace.Demo.Tests.CheckoutTests" name="ApplyDiscount_TenPercent_ReturnsCorrectAmount" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="CalculateTotal_EmptyCart_ReturnsZero" storage="spectrace.demo.tests.dll" id="22de926d-9159-4824-8241-f28d7ce62091">
+      <Execution id="82660a6e-af39-4bd8-947b-dd5b1afe6c56" />
+      <TestMethod className="SpecTrace.Demo.Tests.CheckoutTests" name="CalculateTotal_EmptyCart_ReturnsZero" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="57f98e0d-988e-4e47-8a76-75455ec7a581" executionId="2d54d6f1-ae96-4b34-a6b3-d4145cb920f2" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5" />
+    <TestEntry testId="bf3848df-cc40-403c-b041-0cdc429f3006" executionId="455c63a7-5d59-48f0-8013-0ccc7e8e9194" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5" />
+    <TestEntry testId="22de926d-9159-4824-8241-f28d7ce62091" executionId="82660a6e-af39-4bd8-947b-dd5b1afe6c56" testListId="05e39a31-5447-4a10-ab9f-1c295078a0d5" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="05e39a31-5447-4a10-ab9f-1c295078a0d5" />
+    <TestList name="All Loaded Results" id="7420a4c4-7623-4f42-935f-77ec49cef3df" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

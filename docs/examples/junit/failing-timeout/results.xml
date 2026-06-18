@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="SearchTests" tests="3" passed="2" failures="0" errors="1" skipped="0" time="1.042" timestamp="2024-11-15T10:00:00">
+    <testcase name="SearchByKeyword_KnownProduct_ReturnsResults" classname="SpecTrace.Demo.Tests.SearchTests" time="0.032" />
+    <testcase name="SearchByKeyword_UnknownProduct_ReturnsEmpty" classname="SpecTrace.Demo.Tests.SearchTests" time="0.009" />
+    <testcase name="SearchByKeyword_SlowApi_TimesOut" classname="SpecTrace.Demo.Tests.SearchTests" time="1.001">
+      <error message="Test exceeded execution timeout of 1000 milliseconds." type="Microsoft.VisualStudio.TestPlatform.ObjectModel.TestTimeoutException">
+   at SpecTrace.Demo.Tests.SearchTests.SearchByKeyword_SlowApi_TimesOut() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/SearchTests.cs:line 22
+      </error>
+    </testcase>  </testsuite>
+</testsuites>

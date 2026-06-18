@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="PaymentTests" tests="3" passed="2" failures="1" errors="0" skipped="0" time="0.466" timestamp="2024-11-15T10:00:00">
+    <testcase name="ValidCard_ReturnsConfirmationNumber" classname="SpecTrace.Demo.Tests.PaymentTests" time="0.028" />
+    <testcase name="PaymentStatus_AfterProcessing_IsSettled" classname="SpecTrace.Demo.Tests.PaymentTests" time="0.423">
+      <failure message="Assert.Equal() Failure&#xA;Expected: String &quot;settled&quot;&#xA;Actual:   String &quot;unknown&quot;&#xA;&#xA;Note: This test is known-flaky; gateway propagates status after a random delay." type="Xunit.Sdk.EqualException">
+   at SpecTrace.Demo.Tests.PaymentTests.PaymentStatus_AfterProcessing_IsSettled() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/PaymentTests.cs:line 28
+      </failure>
+    </testcase>
+    <testcase name="ExpiredCard_ThrowsException" classname="SpecTrace.Demo.Tests.PaymentTests" time="0.015" />  </testsuite>
+</testsuites>

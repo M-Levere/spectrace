@@ -1,0 +1,251 @@
+﻿{
+    "config":  {
+                   "configFile":  "C:/code/spectrace/scripts/../demo/playwright-bdd/playwright.config.ts",
+                   "rootDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd",
+                   "forbidOnly":  false,
+                   "fullyParallel":  false,
+                   "globalSetup":  null,
+                   "globalTeardown":  null,
+                   "globalTimeout":  0,
+                   "grep":  "(?:)",
+                   "grepInvert":  null,
+                   "maxFailures":  0,
+                   "metadata":  {
+
+                                },
+                   "preserveOutput":  "always",
+                   "reporter":  [
+                                    "json",
+                                    {
+                                        "outputFile":  "test-results/report.json"
+                                    }
+                                ],
+                   "reportSlowTests":  {
+                                           "max":  5,
+                                           "threshold":  15000
+                                       },
+                   "quiet":  false,
+                   "projects":  [
+                                    {
+                                        "outputDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/test-results",
+                                        "repeatEach":  1,
+                                        "retries":  0,
+                                        "id":  "chromium",
+                                        "name":  "chromium",
+                                        "testDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/.features-gen",
+                                        "testIgnore":  [
+
+                                                       ],
+                                        "testMatch":  [
+                                                          "**/*.spec.ts"
+                                                      ],
+                                        "timeout":  30000
+                                    }
+                                ],
+                   "version":  "1.48.0",
+                   "workers":  1
+               },
+    "suites":  [
+                   {
+                       "title":  "features/search.feature.spec.ts",
+                       "file":  "features/search.feature",
+                       "column":  0,
+                       "line":  0,
+                       "specs":  [
+
+                                 ],
+                       "suites":  [
+                                      {
+                                          "title":  "Product Search",
+                                          "file":  "features/search.feature",
+                                          "line":  1,
+                                          "column":  0,
+                                          "specs":  [
+
+                                                    ],
+                                          "suites":  [
+                                                         {
+                                                             "title":  "Search for products by keyword",
+                                                             "file":  "features/search.feature",
+                                                             "line":  7,
+                                                             "column":  0,
+                                                             "specs":  [
+                                                                           {
+                                                                               "title":  "Search for products by keyword",
+                                                                               "ok":  false,
+                                                                               "tags":  [
+
+                                                                                        ],
+                                                                               "tests":  [
+                                                                                             {
+                                                                                                 "timeout":  30000,
+                                                                                                 "annotations":  [
+
+                                                                                                                 ],
+                                                                                                 "expectedStatus":  "failed",
+                                                                                                 "projectId":  "chromium",
+                                                                                                 "projectName":  "chromium",
+                                                                                                 "results":  [
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "failed",
+                                                                                                                     "duration":  6435,
+                                                                                                                     "errors":  [
+                                                                                                                                    {
+                                                                                                                                        "message":  "page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.",
+                                                                                                                                        "value":  "TimeoutError: page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.\n    at steps/search.steps.ts:14:58\n    at Test.\u003canonymous\u003e (.features-gen/search.feature.spec.ts:27:5)"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  0,
+                                                                                                                     "startTime":  "2024-11-15T10:10:00.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/timeout-chromium/trace.zip"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "name":  "screenshot",
+                                                                                                                                             "contentType":  "image/png",
+                                                                                                                                             "path":  "test-results/timeout-chromium/screenshot-on-failure.png"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:10:00.000Z",
+                                                                                                                                       "duration":  401,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am on the product catalog page",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:10:00.401Z",
+                                                                                                                                       "duration":  823,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/products\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:10:00.401Z",
+                                                                                                                                                         "duration":  820,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I enter \"wireless headphones\" in the search box",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:10:01.224Z",
+                                                                                                                                       "duration":  65,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027wireless headphones\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:10:01.224Z",
+                                                                                                                                                         "duration":  62,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I submit the search query",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:10:01.289Z",
+                                                                                                                                       "duration":  5012,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.keyboard.press(\u0027Enter\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:10:01.289Z",
+                                                                                                                                                         "duration":  10,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.waitFor({state:\u0027visible\u0027,timeout:5000})",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:10:01.299Z",
+                                                                                                                                                         "duration":  5002,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  {
+                                                                                                                                                                       "message":  "page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.",
+                                                                                                                                                                       "value":  "TimeoutError: page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.\n    at steps/search.steps.ts:14:58\n    at Test.\u003canonymous\u003e (.features-gen/search.feature.spec.ts:27:5)"
+                                                                                                                                                                   }
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  {
+                                                                                                                                                     "message":  "page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.",
+                                                                                                                                                     "value":  "TimeoutError: page.locator(\u0027[data-testid=\"search-results\"]\u0027).waitFor: Timeout 5000ms exceeded.\n    at steps/search.steps.ts:14:58\n    at Test.\u003canonymous\u003e (.features-gen/search.feature.spec.ts:27:5)"
+                                                                                                                                                 }
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:10:06.301Z",
+                                                                                                                                       "duration":  134,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.screenshot()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:10:06.301Z",
+                                                                                                                                                         "duration":  130,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 }
+                                                                                                             ],
+                                                                                                 "status":  "unexpected"
+                                                                                             }
+                                                                                         ],
+                                                                               "id":  "2efe6ed74358",
+                                                                               "file":  "features/search.feature",
+                                                                               "line":  7
+                                                                           }
+                                                                       ]
+                                                         }
+                                                     ]
+                                      }
+                                  ]
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "stats":  {
+                  "startTime":  "2024-11-15T10:10:00.000Z",
+                  "duration":  6435,
+                  "expected":  0,
+                  "skipped":  0,
+                  "unexpected":  1,
+                  "flaky":  0
+              }
+}

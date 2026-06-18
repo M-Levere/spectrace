@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="LoginTests" tests="3" passed="3" failures="0" errors="0" skipped="0" time="0.065" timestamp="2024-11-15T10:00:00">
+    <testcase name="ValidCredentials_ReturnsSessionToken" classname="SpecTrace.Demo.Tests.LoginTests" time="0.045" />
+    <testcase name="ValidCredentials_ReturnsCorrectWelcomeMessage" classname="SpecTrace.Demo.Tests.LoginTests" time="0.012" />
+    <testcase name="ValidCredentials_SetsSessionExpiry" classname="SpecTrace.Demo.Tests.LoginTests" time="0.008" />  </testsuite>
+</testsuites>

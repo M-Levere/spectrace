@@ -1,0 +1,107 @@
+﻿{
+    "numFailedTestSuites":  0,
+    "numFailedTests":  0,
+    "numPassedTestSuites":  1,
+    "numPassedTests":  3,
+    "numPendingTestSuites":  0,
+    "numPendingTests":  0,
+    "numRuntimeErrorTestSuites":  0,
+    "numTodoTests":  0,
+    "numTotalTestSuites":  1,
+    "numTotalTests":  3,
+    "openHandles":  [
+
+                    ],
+    "snapshot":  {
+                     "added":  0,
+                     "didUpdate":  false,
+                     "failure":  false,
+                     "filesAdded":  0,
+                     "filesRemoved":  0,
+                     "filesRemovedList":  [
+
+                                          ],
+                     "filesUnmatched":  0,
+                     "filesUpdated":  0,
+                     "matched":  0,
+                     "total":  0,
+                     "unchecked":  0,
+                     "uncheckedKeyPath":  [
+
+                                          ],
+                     "unmatched":  0,
+                     "updated":  0
+                 },
+    "startTime":  1731657600000,
+    "success":  true,
+    "testResults":  [
+                        {
+                            "assertionResults":  [
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "User Login",
+                                                                                "Successful login with valid credentials"
+                                                                            ],
+                                                         "duration":  45,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "User Login Successful login with valid credentials returns a session token for valid credentials",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  6
+                                                                      },
+                                                         "numPassingAsserts":  2,
+                                                         "status":  "passed",
+                                                         "title":  "returns a session token for valid credentials"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "User Login",
+                                                                                "Successful login with valid credentials"
+                                                                            ],
+                                                         "duration":  12,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "User Login Successful login with valid credentials returns the correct welcome message",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  12
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "returns the correct welcome message"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "User Login",
+                                                                                "Successful login with valid credentials"
+                                                                            ],
+                                                         "duration":  8,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "User Login Successful login with valid credentials sets the correct session expiry",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  18
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "sets the correct session expiry"
+                                                     }
+                                                 ],
+                            "endTime":  1731657602000,
+                            "message":  "",
+                            "startTime":  1731657600100,
+                            "status":  "passed",
+                            "testExecError":  null,
+                            "testFilePath":  "/code/spectrace/demo/jest/__tests__/login.test.ts"
+                        }
+                    ],
+    "wasInterrupted":  false
+}

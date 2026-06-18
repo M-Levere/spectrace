@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ad2e12ff-e06b-4d7b-9e68-d0fe91451be7" name="SpecTrace Demo flaky run" runUser="demo-runner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-11-15T10:00:00.0000000+00:00" queuing="2024-11-15T10:00:00.0000000+00:00" start="2024-11-15T10:00:00.0000000+00:00" finish="2024-11-15T10:00:01.5000000+00:00" />
+  <TestSettings name="default" id="ba06d03b-d5ab-41b0-84c8-3727ed22da72" />
+  <Results>
+    <UnitTestResult executionId="8de81f0a-445e-4281-b9f6-ad4526d9c27f" testId="a6089532-693b-4d60-9620-944ec321f069" testName="ValidCard_ReturnsConfirmationNumber" computerName="CI-AGENT" duration="00:00:00.0280000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0280000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="84057e6d-c529-4012-bcbd-8364cd31b8af" testId="b827d0f7-d77c-46c0-90e4-2ad5bb1a4f8c" testName="PaymentStatus_AfterProcessing_IsSettled" computerName="CI-AGENT" duration="00:00:00.4230000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.4230000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315">
+      <Output><ErrorInfo><Message>Assert.Equal() Failure&#xD;&#xA;Expected: String "settled"&#xD;&#xA;Actual:   String "unknown"&#xD;&#xA;&#xD;&#xA;Note: This test is known-flaky; the gateway propagates status after a random delay.</Message><StackTrace>   at SpecTrace.Demo.Tests.PaymentTests.PaymentStatus_AfterProcessing_IsSettled() in /code/spectrace/demo/dotnet/SpecTrace.Demo.Tests/PaymentTests.cs:line 28</StackTrace></ErrorInfo></Output>
+    </UnitTestResult>    <UnitTestResult executionId="1f4416ea-b03e-492e-9694-91f1b14d15b6" testId="8874d158-4782-471e-a355-d49628ed8500" testName="ExpiredCard_ThrowsException" computerName="CI-AGENT" duration="00:00:00.0150000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0150000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315">
+      <Output><StdOut /></Output>
+    </UnitTestResult>  </Results>
+  <TestDefinitions>
+    <UnitTest name="ValidCard_ReturnsConfirmationNumber" storage="spectrace.demo.tests.dll" id="a6089532-693b-4d60-9620-944ec321f069">
+      <Execution id="8de81f0a-445e-4281-b9f6-ad4526d9c27f" />
+      <TestMethod className="SpecTrace.Demo.Tests.PaymentTests" name="ValidCard_ReturnsConfirmationNumber" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="PaymentStatus_AfterProcessing_IsSettled" storage="spectrace.demo.tests.dll" id="b827d0f7-d77c-46c0-90e4-2ad5bb1a4f8c">
+      <Execution id="84057e6d-c529-4012-bcbd-8364cd31b8af" />
+      <TestMethod className="SpecTrace.Demo.Tests.PaymentTests" name="PaymentStatus_AfterProcessing_IsSettled" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="ExpiredCard_ThrowsException" storage="spectrace.demo.tests.dll" id="8874d158-4782-471e-a355-d49628ed8500">
+      <Execution id="1f4416ea-b03e-492e-9694-91f1b14d15b6" />
+      <TestMethod className="SpecTrace.Demo.Tests.PaymentTests" name="ExpiredCard_ThrowsException" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a6089532-693b-4d60-9620-944ec321f069" executionId="8de81f0a-445e-4281-b9f6-ad4526d9c27f" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315" />
+    <TestEntry testId="b827d0f7-d77c-46c0-90e4-2ad5bb1a4f8c" executionId="84057e6d-c529-4012-bcbd-8364cd31b8af" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315" />
+    <TestEntry testId="8874d158-4782-471e-a355-d49628ed8500" executionId="1f4416ea-b03e-492e-9694-91f1b14d15b6" testListId="2ef7816c-7eef-434e-bae7-013e8a6f6315" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="2ef7816c-7eef-434e-bae7-013e8a6f6315" />
+    <TestList name="All Loaded Results" id="9e45175d-82ab-4178-bf24-0fcfc984eab8" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

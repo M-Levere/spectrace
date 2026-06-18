@@ -1,0 +1,461 @@
+﻿{
+    "config":  {
+                   "configFile":  "C:/code/spectrace/scripts/../demo/playwright-bdd/playwright.config.ts",
+                   "rootDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd",
+                   "forbidOnly":  false,
+                   "fullyParallel":  false,
+                   "globalSetup":  null,
+                   "globalTeardown":  null,
+                   "globalTimeout":  0,
+                   "grep":  "(?:)",
+                   "grepInvert":  null,
+                   "maxFailures":  0,
+                   "metadata":  {
+
+                                },
+                   "preserveOutput":  "always",
+                   "reporter":  [
+                                    "json",
+                                    {
+                                        "outputFile":  "test-results/report.json"
+                                    }
+                                ],
+                   "reportSlowTests":  {
+                                           "max":  5,
+                                           "threshold":  15000
+                                       },
+                   "quiet":  false,
+                   "projects":  [
+                                    {
+                                        "outputDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/test-results",
+                                        "repeatEach":  1,
+                                        "retries":  2,
+                                        "id":  "chromium",
+                                        "name":  "chromium",
+                                        "testDir":  "C:/code/spectrace/scripts/../demo/playwright-bdd/.features-gen",
+                                        "testIgnore":  [
+
+                                                       ],
+                                        "testMatch":  [
+                                                          "**/*.spec.ts"
+                                                      ],
+                                        "timeout":  30000
+                                    }
+                                ],
+                   "version":  "1.48.0",
+                   "workers":  1
+               },
+    "suites":  [
+                   {
+                       "title":  "payment.feature.spec.ts",
+                       "file":  "features/payment.feature",
+                       "column":  0,
+                       "line":  0,
+                       "specs":  [
+
+                                 ],
+                       "suites":  [
+                                      {
+                                          "title":  "Payment Processing",
+                                          "file":  "features/payment.feature",
+                                          "line":  1,
+                                          "column":  0,
+                                          "specs":  [
+
+                                                    ],
+                                          "suites":  [
+                                                         {
+                                                             "title":  "Process payment with credit card",
+                                                             "file":  "features/payment.feature",
+                                                             "line":  7,
+                                                             "column":  0,
+                                                             "specs":  [
+                                                                           {
+                                                                               "title":  "Process payment with credit card",
+                                                                               "ok":  true,
+                                                                               "tags":  [
+
+                                                                                        ],
+                                                                               "tests":  [
+                                                                                             {
+                                                                                                 "timeout":  30000,
+                                                                                                 "annotations":  [
+
+                                                                                                                 ],
+                                                                                                 "expectedStatus":  "passed",
+                                                                                                 "projectId":  "chromium",
+                                                                                                 "projectName":  "chromium",
+                                                                                                 "results":  [
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "failed",
+                                                                                                                     "duration":  3954,
+                                                                                                                     "errors":  [
+                                                                                                                                    {
+                                                                                                                                        "message":  "expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\nExpected: visible\nReceived: hidden\n\nCall log:\n  - expect.toBeVisible with timeout 2000ms\n  - waiting for locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)",
+                                                                                                                                        "value":  "Error: expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\n    at steps/payment.steps.ts:18:74\n    at Test.\u003canonymous\u003e (.features-gen/payment.feature.spec.ts:36:5)"
+                                                                                                                                    }
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  0,
+                                                                                                                     "startTime":  "2024-11-15T10:20:00.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/flaky-chromium/trace.zip"
+                                                                                                                                         },
+                                                                                                                                         {
+                                                                                                                                             "name":  "screenshot",
+                                                                                                                                             "contentType":  "image/png",
+                                                                                                                                             "path":  "test-results/flaky-chromium/screenshot-on-failure.png"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:20:00.000Z",
+                                                                                                                                       "duration":  312,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am on the payment page with a pending order",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:00.312Z",
+                                                                                                                                       "duration":  1102,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/payment?orderId=DEMO-12345\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:00.312Z",
+                                                                                                                                                         "duration":  1099,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I enter valid credit card details",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:01.414Z",
+                                                                                                                                       "duration":  182,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u00274111111111111111\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.414Z",
+                                                                                                                                                         "duration":  45,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u002712/26\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.459Z",
+                                                                                                                                                         "duration":  42,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027123\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.501Z",
+                                                                                                                                                         "duration":  41,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027Test User\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.542Z",
+                                                                                                                                                         "duration":  54,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I submit the payment form",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:01.596Z",
+                                                                                                                                       "duration":  234,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.596Z",
+                                                                                                                                                         "duration":  231,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Then the payment should be processed successfully",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:01.830Z",
+                                                                                                                                       "duration":  2012,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(locator).toBeVisible({timeout:2000})",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:01.830Z",
+                                                                                                                                                         "duration":  2010,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  {
+                                                                                                                                                                       "message":  "expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\nExpected: visible\nReceived: hidden\n\nCall log:\n  - expect.toBeVisible with timeout 2000ms\n  - waiting for locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)",
+                                                                                                                                                                       "value":  "Error: expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\n    at steps/payment.steps.ts:18:74\n    at Test.\u003canonymous\u003e (.features-gen/payment.feature.spec.ts:36:5)"
+                                                                                                                                                                   }
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  {
+                                                                                                                                                     "message":  "expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\nExpected: visible\nReceived: hidden\n\nCall log:\n  - expect.toBeVisible with timeout 2000ms\n  - waiting for locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)",
+                                                                                                                                                     "value":  "Error: expect(locator).toBeVisible()\n\nLocator: locator(\u0027[data-testid=\"payment-success-modal\"]\u0027)\n    at steps/payment.steps.ts:18:74\n    at Test.\u003canonymous\u003e (.features-gen/payment.feature.spec.ts:36:5)"
+                                                                                                                                                 }
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:03.842Z",
+                                                                                                                                       "duration":  112,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.screenshot()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:03.842Z",
+                                                                                                                                                         "duration":  108,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 },
+                                                                                                                 {
+                                                                                                                     "workerIndex":  0,
+                                                                                                                     "parallelIndex":  0,
+                                                                                                                     "status":  "passed",
+                                                                                                                     "duration":  2335,
+                                                                                                                     "errors":  [
+
+                                                                                                                                ],
+                                                                                                                     "stdout":  [
+
+                                                                                                                                ],
+                                                                                                                     "stderr":  [
+
+                                                                                                                                ],
+                                                                                                                     "retry":  1,
+                                                                                                                     "startTime":  "2024-11-15T10:20:05.000Z",
+                                                                                                                     "attachments":  [
+                                                                                                                                         {
+                                                                                                                                             "name":  "trace",
+                                                                                                                                             "contentType":  "application/zip",
+                                                                                                                                             "path":  "test-results/flaky-chromium-retry1/trace.zip"
+                                                                                                                                         }
+                                                                                                                                     ],
+                                                                                                                     "steps":  [
+                                                                                                                                   {
+                                                                                                                                       "title":  "Before Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T10:20:05.000Z",
+                                                                                                                                       "duration":  312,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Given I am on the payment page with a pending order",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:05.312Z",
+                                                                                                                                       "duration":  1102,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "page.goto(\u0027http://localhost:3000/payment?orderId=DEMO-12345\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:05.312Z",
+                                                                                                                                                         "duration":  1099,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "When I enter valid credit card details",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:06.414Z",
+                                                                                                                                       "duration":  182,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u00274111111111111111\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.414Z",
+                                                                                                                                                         "duration":  45,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u002712/26\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.459Z",
+                                                                                                                                                         "duration":  42,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027123\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.501Z",
+                                                                                                                                                         "duration":  41,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     },
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.fill(\u0027Test User\u0027)",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.542Z",
+                                                                                                                                                         "duration":  54,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I submit the payment form",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:06.596Z",
+                                                                                                                                       "duration":  234,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "locator.click()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.596Z",
+                                                                                                                                                         "duration":  231,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "Then the payment should be processed successfully",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:06.830Z",
+                                                                                                                                       "duration":  312,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(locator).toBeVisible({timeout:2000})",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:06.830Z",
+                                                                                                                                                         "duration":  310,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "And I should see the payment confirmation with an order number",
+                                                                                                                                       "category":  "test.step",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:07.142Z",
+                                                                                                                                       "duration":  145,
+                                                                                                                                       "steps":  [
+                                                                                                                                                     {
+                                                                                                                                                         "title":  "expect(locator).toBeVisible()",
+                                                                                                                                                         "category":  "pw:api",
+                                                                                                                                                         "startTime":  "2024-11-15T05:20:07.142Z",
+                                                                                                                                                         "duration":  143,
+                                                                                                                                                         "steps":  [
+
+                                                                                                                                                                   ],
+                                                                                                                                                         "error":  null
+                                                                                                                                                     }
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   },
+                                                                                                                                   {
+                                                                                                                                       "title":  "After Hooks",
+                                                                                                                                       "category":  "hook",
+                                                                                                                                       "startTime":  "2024-11-15T05:20:07.287Z",
+                                                                                                                                       "duration":  48,
+                                                                                                                                       "steps":  [
+
+                                                                                                                                                 ],
+                                                                                                                                       "error":  null
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 }
+                                                                                                             ],
+                                                                                                 "status":  "flaky"
+                                                                                             }
+                                                                                         ],
+                                                                               "id":  "36ca3fda5a69",
+                                                                               "file":  "features/payment.feature",
+                                                                               "line":  7
+                                                                           }
+                                                                       ]
+                                                         }
+                                                     ]
+                                      }
+                                  ]
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "stats":  {
+                  "startTime":  "2024-11-15T10:20:00.000Z",
+                  "duration":  6289,
+                  "expected":  0,
+                  "skipped":  0,
+                  "unexpected":  0,
+                  "flaky":  1
+              }
+}

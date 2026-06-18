@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5b4f1bf5-4d22-4288-b19b-07cbb8841007" name="SpecTrace Demo passing run" runUser="demo-runner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-11-15T10:00:00.0000000+00:00" queuing="2024-11-15T10:00:00.0000000+00:00" start="2024-11-15T10:00:00.0000000+00:00" finish="2024-11-15T10:00:01.5000000+00:00" />
+  <TestSettings name="default" id="4cbe4d78-4e71-438f-a1a7-0438378f7333" />
+  <Results>
+    <UnitTestResult executionId="808a3932-6162-42a6-86e8-7335c509a7b5" testId="4b234de7-609c-4a2d-adda-4461ee94a608" testName="ValidCredentials_ReturnsSessionToken" computerName="CI-AGENT" duration="00:00:00.0450000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0450000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="c97a9b0a-8a79-4c54-96f5-10c46345b5e7" testId="ac8167b1-8588-49d7-8c0b-418c43e6437d" testName="ValidCredentials_ReturnsCorrectWelcomeMessage" computerName="CI-AGENT" duration="00:00:00.0120000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0120000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5">
+      <Output><StdOut /></Output>
+    </UnitTestResult>    <UnitTestResult executionId="5f8c0e00-f0fa-4e87-b126-2291b47ee241" testId="c1ddfee1-e2fd-430c-9049-60e5e67b113f" testName="ValidCredentials_SetsSessionExpiry" computerName="CI-AGENT" duration="00:00:00.0080000" startTime="2024-11-15T10:00:00.0000000Z" endTime="2024-11-15T05:00:00.0080000Z" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5">
+      <Output><StdOut /></Output>
+    </UnitTestResult>  </Results>
+  <TestDefinitions>
+    <UnitTest name="ValidCredentials_ReturnsSessionToken" storage="spectrace.demo.tests.dll" id="4b234de7-609c-4a2d-adda-4461ee94a608">
+      <Execution id="808a3932-6162-42a6-86e8-7335c509a7b5" />
+      <TestMethod className="SpecTrace.Demo.Tests.LoginTests" name="ValidCredentials_ReturnsSessionToken" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="ValidCredentials_ReturnsCorrectWelcomeMessage" storage="spectrace.demo.tests.dll" id="ac8167b1-8588-49d7-8c0b-418c43e6437d">
+      <Execution id="c97a9b0a-8a79-4c54-96f5-10c46345b5e7" />
+      <TestMethod className="SpecTrace.Demo.Tests.LoginTests" name="ValidCredentials_ReturnsCorrectWelcomeMessage" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>    <UnitTest name="ValidCredentials_SetsSessionExpiry" storage="spectrace.demo.tests.dll" id="c1ddfee1-e2fd-430c-9049-60e5e67b113f">
+      <Execution id="5f8c0e00-f0fa-4e87-b126-2291b47ee241" />
+      <TestMethod className="SpecTrace.Demo.Tests.LoginTests" name="ValidCredentials_SetsSessionExpiry" adapterTypeName="executor://xunit/VsTestRunner2/net" />
+    </UnitTest>  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="4b234de7-609c-4a2d-adda-4461ee94a608" executionId="808a3932-6162-42a6-86e8-7335c509a7b5" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5" />
+    <TestEntry testId="ac8167b1-8588-49d7-8c0b-418c43e6437d" executionId="c97a9b0a-8a79-4c54-96f5-10c46345b5e7" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5" />
+    <TestEntry testId="c1ddfee1-e2fd-430c-9049-60e5e67b113f" executionId="5f8c0e00-f0fa-4e87-b126-2291b47ee241" testListId="5623e0a3-6fad-4fbf-bd55-c15abbb936e5" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="5623e0a3-6fad-4fbf-bd55-c15abbb936e5" />
+    <TestList name="All Loaded Results" id="d2a9a2e0-82c7-4cf1-ab04-a023bd4c3b70" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

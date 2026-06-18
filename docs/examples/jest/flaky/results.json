@@ -1,0 +1,107 @@
+﻿{
+    "numFailedTestSuites":  1,
+    "numFailedTests":  1,
+    "numPassedTestSuites":  0,
+    "numPassedTests":  2,
+    "numPendingTestSuites":  0,
+    "numPendingTests":  0,
+    "numRuntimeErrorTestSuites":  0,
+    "numTodoTests":  0,
+    "numTotalTestSuites":  1,
+    "numTotalTests":  3,
+    "openHandles":  [
+
+                    ],
+    "snapshot":  {
+                     "added":  0,
+                     "didUpdate":  false,
+                     "failure":  false,
+                     "filesAdded":  0,
+                     "filesRemoved":  0,
+                     "filesRemovedList":  [
+
+                                          ],
+                     "filesUnmatched":  0,
+                     "filesUpdated":  0,
+                     "matched":  0,
+                     "total":  0,
+                     "unchecked":  0,
+                     "uncheckedKeyPath":  [
+
+                                          ],
+                     "unmatched":  0,
+                     "updated":  0
+                 },
+    "startTime":  1731657600000,
+    "success":  false,
+    "testResults":  [
+                        {
+                            "assertionResults":  [
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Payment Processing",
+                                                                                "Credit card payment"
+                                                                            ],
+                                                         "duration":  28,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Payment Processing Credit card payment returns a confirmation number for valid payment details",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  6
+                                                                      },
+                                                         "numPassingAsserts":  2,
+                                                         "status":  "passed",
+                                                         "title":  "returns a confirmation number for valid payment details"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Payment Processing",
+                                                                                "Credit card payment"
+                                                                            ],
+                                                         "duration":  423,
+                                                         "failureMessages":  [
+                                                                                 "Error: expect(received).toBe(expected)\n\nExpected: \"settled\"\nReceived: \"unknown\"\n    at Object.\u003canonymous\u003e (demo/jest/__tests__/payment.test.ts:20:22)\n\nNote: This test is known to be flaky - the payment gateway propagates status after a random delay."
+                                                                             ],
+                                                         "fullName":  "Payment Processing Credit card payment payment status is queryable by confirmation number",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  13
+                                                                      },
+                                                         "numPassingAsserts":  0,
+                                                         "status":  "failed",
+                                                         "title":  "payment status is queryable by confirmation number"
+                                                     },
+                                                     {
+                                                         "ancestorTitles":  [
+                                                                                "Payment Processing",
+                                                                                "Credit card payment"
+                                                                            ],
+                                                         "duration":  15,
+                                                         "failureMessages":  [
+
+                                                                             ],
+                                                         "fullName":  "Payment Processing Credit card payment rejects expired card",
+                                                         "invocations":  1,
+                                                         "location":  {
+                                                                          "column":  7,
+                                                                          "line":  24
+                                                                      },
+                                                         "numPassingAsserts":  1,
+                                                         "status":  "passed",
+                                                         "title":  "rejects expired card"
+                                                     }
+                                                 ],
+                            "endTime":  1731657602000,
+                            "message":  "  * Payment Processing \u003e Credit card payment \u003e payment status is queryable by confirmation number\n\n    expect(received).toBe(expected)\n\n    Expected: \"settled\"\n    Received: \"unknown\"",
+                            "startTime":  1731657600100,
+                            "status":  "failed",
+                            "testExecError":  null,
+                            "testFilePath":  "/code/spectrace/demo/jest/__tests__/payment.test.ts"
+                        }
+                    ],
+    "wasInterrupted":  false
+}
