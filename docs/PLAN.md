@@ -132,7 +132,7 @@ spectrace/
 
 ### 2.4 Artifact storage strategy
 - CLI mode: artifacts stay on disk; nothing is stored.
-- Dashboard mode: store **derived/normalized data + small evidence pointers** in the relational DB (EF Core: PostgreSQL for dev/test, SQL Server / Azure SQL swappable for company deploy); store **large blobs** (traces, screenshots) in object storage (S3-compatible / Azure Blob) with a configurable retention policy. Default retention is short (e.g., 14 days) and configurable. Never store raw secrets; redaction runs before persistence.
+- Dashboard mode: store **derived/normalized data + small evidence pointers** in PostgreSQL (EF Core); store **large blobs** (traces, screenshots) in object storage (S3-compatible / Azure Blob) with a configurable retention policy. Default retention is short (e.g., 14 days) and configurable. Never store raw secrets; redaction runs before persistence.
 
 ---
 
@@ -395,14 +395,14 @@ spectrace report      # re-render a stored JSON report to markdown
 
 ---
 
-## 9. CI/CD integration design (Azure DevOps first)
+## 9. CI/CD integration design (GitHub Actions first)
 
-**Azure DevOps (first-class):**
-- A pipeline task/step runs `spectrace analyze $(Build.ArtifactStagingDirectory) --format json --output spectrace.json`.
-- Publishes markdown to the build summary, attaches `spectrace.json`, and (if a repo PR) posts a PR comment via the Azure DevOps API using a scoped token.
+**GitHub Actions (first-class):**
+- A workflow step runs `spectrace analyze ./artifacts --format json --output spectrace.json`, with the result-collection step set to `if: always()` so a failed test job still produces files to analyze.
+- Writes the markdown report to `$GITHUB_STEP_SUMMARY`, uploads `spectrace.json` as a build artifact, and (on a PR) posts/updates a PR comment via the GitHub API using the workflow token.
 - Dashboard upload via `--upload` with a project token (API ingests, worker trends).
 
-**GitHub Actions (second):** a composite action wrapping the same CLI; PR comment via the GitHub API; summary via `$GITHUB_STEP_SUMMARY`.
+**Azure DevOps (optional, second):** the same CLI in a pipeline step; markdown to the build summary tab, `spectrace.json` attached, PR comment via the Azure DevOps API.
 
 Both modes share one rule: **the CLI does the work, the CI wrapper only moves outputs.** This keeps integrations thin and portable, and a third CI system later is just another wrapper.
 
@@ -416,11 +416,11 @@ Both modes share one rule: **the CLI does the work, the CI wrapper only moves ou
 
 ## 10. Risks & tradeoffs
 
-- **.NET core invoked by a TS CLI** adds a packaging step (single-file/AOT binary per platform). Tradeoff accepted to avoid maintaining parsing/heuristics twice. Revisit if cross-platform binary packaging proves painful.
+- **Native .NET CLI** means per-platform binary packaging (single-file/AOT) if you distribute binaries; `dotnet tool` avoids that but requires the .NET runtime. Fine for a portfolio (the repo + a `dotnet run` is enough).
 - **Heuristic-first** means early versions will say "unknown / needs review" more often than a pure-LLM tool. This is intentional and honest; acceptance feedback closes the gap.
 - **Clustering/caching** can mask a real divergence if the signature is too coarse. Mitigate with conservative signatures (message + normalized stack) and a "diagnose individually" override.
 - **Cost caps degrading to heuristic-only** can surprise users mid-run; surfaced loudly in the report and dashboard.
-- **Local-model quality** varies; privacy mode trades some diagnosis quality for zero egress. Documented clearly.
+- **Local-model option** is deferred; hosted AI is the default. (Not relevant to the portfolio scope.)
 - **Multimodal trace/screenshot analysis** is costly; kept selective and behind UI-category gating.
 
 ---
@@ -441,7 +441,7 @@ Both modes share one rule: **the CLI does the work, the CI wrapper only moves ou
 
 Each phase: **goal · deliverables · acceptance · tests · risks · commit boundaries.** Phases are ordered so the tool is useful early and AI is additive.
 
-> **Adoption-first sequencing note (confirmed goal: company adoption).** The strongest wedge into a skeptical team is *CLI + heuristic + AI diagnosis + an Azure DevOps PR comment* with **zero dashboard infra** — that's the "try it on one failing pipeline" moment. So pull a **minimal slice of Phase 10** (build-summary markdown + PR comment) forward to land right after Phase 5, ahead of the full dashboard (Phase 7). The dashboard is the "once they're hooked" retention piece, not the entry point. Trust features (no secret leakage, off-by-default code suggestions, honest "needs review" confidence) are weighted heavily because adoption depends on surviving a security/quality review.
+> **Portfolio sequencing note (goal: portfolio project).** Build the engineering substance first — CLI + heuristic + AI diagnosis (Phases 1–5) — then a minimal **GitHub Actions** slice (step-summary report + confidence-gated PR comment) right after Phase 5, then the **dashboard** (Phase 7) as the visual centerpiece a reviewer can screenshot. Phases 1–7 form a complete, demoable story; Phases 8–11 add depth; Phases 12–13 are packaging and presentation. A polished 1–7 plus a strong README/demo beats a half-finished 1–11.
 
 ### Phase 1 — Local demo app + generated artifacts
 - **Goal:** a sample project that emits realistic JUnit/TRX/**playwright-bdd**/Jest artifacts (passing, failing, flaky) to develop against — including `.feature` files, step defs, the Playwright JSON reporter output, and `trace.zip`/screenshots.
@@ -531,15 +531,17 @@ Each phase: **goal · deliverables · acceptance · tests · risks · commit bou
 - **Risks:** vanity metrics. Mitigate by anchoring on acceptance rate + cost per accepted diagnosis.
 - **Commits:** `feat(feedback): capture`, `feat(dashboard): ai usage+cost`, `feat(ai): prompt A/B`.
 
-### Phase 12 — Company-ready self-hosted package
-- **Goal:** one-command self-host of the full stack against a hosted AI provider; local-model support is an optional stretch.
-- **Deliverables:** Docker Compose (API + dashboard + Postgres + optional Redis + optional object storage), provider config (hosted default), retention + audit log, `spectrace.config.example.yml`, install/runbook docs. *Stretch:* `LocalProvider` wiring + egress-free mode for a future privacy-sensitive customer.
-- **Acceptance:** a fresh machine runs the full stack via compose against a hosted provider; redaction + retention + audit verified. *Stretch acceptance:* local-model mode routes all AI to a local endpoint with zero external egress.
-- **Tests:** compose smoke test; retention job test; redaction-on-egress test. *Stretch:* egress test in local-model mode.
-- **Risks:** environment drift. Mitigate with pinned images + a documented support matrix.
-- **Commits:** `feat(infra): compose`, `feat(infra): privacy mode`, `docs(deploy): runbook`.
+### Phase 12 — Run-it-yourself package (lightweight)
+- **Goal:** one-command local run of the full stack; no enterprise hardening.
+- **Deliverables:** Docker Compose (api + dashboard + Postgres + optional Redis/MinIO), `spectrace.config.example.yml`, a short README "run locally" section.
+- **Acceptance:** `docker compose up` brings up the stack on a fresh machine and the dashboard loads.
+- **Commits:** `feat(infra): compose`, `docs: run-locally`.
 
----
+### Phase 13 — Portfolio polish
+- **Goal:** make the repo legible and impressive to a stranger in under two minutes.
+- **Deliverables:** README (problem, what it does, architecture diagram, screenshot/demo GIF, quickstart, tech highlights); a short recorded demo or seeded hosted dashboard; clean commit history; `PLAN.md`/`CONTRACTS.md` linked from the README to show design thinking; license + badges.
+- **Acceptance:** someone unfamiliar can understand it and see it work without running anything.
+- **Commits:** `docs: readme + architecture`, `docs: demo`.
 
 ## 13. Summary
 

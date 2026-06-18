@@ -72,7 +72,7 @@ Hard rules: patch must apply cleanly against the **exact retrieved file content*
 Canonical example: `spectrace.config.example.yml`. Schema-validated; CLI fails fast on invalid config.
 
 ## Persistence
-EF Core, provider-swappable. Dev/test = PostgreSQL; company deploy = SQL Server / Azure SQL via provider + connection string. Keep `DbContext` provider-agnostic (no Postgres-only features); maintain migrations per provider. Cross-run cache lives in the DB, not process memory.
+EF Core with **PostgreSQL** (single provider — no SQL Server portability). Use EF Core normally; Postgres-specific features are fine. Cross-run cache lives in the DB, not process memory.
 
 ## CLI boundary
 The CLI is native .NET and calls `SpecTrace.Core` in-process — there is no cross-process protocol. The only "contract" is the **report shape** the CLI writes to stdout / a file: the JSON report schema (run summary + per-failure diagnosis + evidence). Keep that schema stable; the dashboard upload and CI publishing both consume it.

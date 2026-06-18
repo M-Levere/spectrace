@@ -4,18 +4,20 @@
 
 ## What this is
 
-SpecTrace is an AI-assisted test-intelligence tool. It ingests CI test artifacts (playwright-bdd, Jest, JUnit XML, .NET TRX), diagnoses failed/flaky tests with **evidence-backed** root causes, and recommends test-suite improvements (incl. BDD→Jest). Optional, review-only code suggestions. Provider-agnostic AI. Runs CLI-only, self-hosted, or in-pipeline.
+SpecTrace is an AI-assisted test-intelligence tool. It ingests CI test artifacts (playwright-bdd, Jest, JUnit XML, .NET TRX), diagnoses failed/flaky tests with **evidence-backed** root causes, and recommends test-suite improvements (incl. BDD→Jest). Optional, review-only code suggestions. Provider-agnostic AI. Runs as a CLI, in CI, or with a self-hosted dashboard.
+
+**Goal: this is a portfolio project** — publicly owned, on GitHub, meant to showcase strong engineering (the AI pipeline, provider abstraction, evidence-cited diagnosis, clean tests, clear docs). Optimize for a polished, demoable, well-documented result over enterprise rollout. A finished, clean subset beats a sprawling unfinished tool.
 
 ## Locked decisions (do not re-litigate)
 
 - **Hosted AI is the default.** Local model (`LocalProvider`) is a clean later option behind the abstraction — not MVP. Redaction + source allowlist still apply to hosted calls.
 - **UI tests are playwright-bdd (Gherkin).** Parse the Playwright JSON reporter + `trace.zip`/screenshots + `.feature`/step-def files. `bddStep` comes from `test.step` granularity in the trace. No CucumberJS/Reqnroll/SpecFlow parsers in MVP.
-- **Adoption-first sequencing.** The wedge is CLI + heuristic + AI diagnosis + an **Azure DevOps PR comment**, zero dashboard infra. Pull the minimal ADO slice (build summary + PR comment) forward to right after Phase 5, ahead of the dashboard (Phase 7).
+- **Portfolio sequencing.** Showcase order: CLI + heuristic + AI diagnosis early (the engineering substance), then the **dashboard** as the visual centerpiece a reviewer can screenshot. **GitHub Actions is the primary CI** (public, runs in the repo for anyone to see); Azure DevOps is optional/secondary.
 - **Two clustering signatures.** `cause_signature` (test-agnostic, within-run clustering) and `failure_signature` (narrow, cross-run cache). See CONTRACTS.md.
 - **Code suggestions: OFF by default, review-only, never auto-applied.** Refuse high-risk/security/migration/weak-evidence/uncontextualized patches.
 - **`confidence.prPublishThreshold` defaults to `high`.** PR comments carry medium/high only; low-confidence goes to build summary + dashboard only.
 - **CLI is native .NET, no TypeScript wrapper.** `apps/cli` is a .NET console app that references `SpecTrace.Core` directly (in-process, no spawning). Ships as a `dotnet tool` or self-contained binary. Must work offline / dashboard-free. The Next.js stack is for the dashboard only.
-- **DB via EF Core, provider-swappable.** Develop and test on **PostgreSQL** (easy local, no licensing). Ship so a company can point at **SQL Server / Azure SQL** by changing the provider + connection string. Keep the `DbContext` provider-agnostic — avoid Postgres-only features (jsonb tricks, arrays, `ON CONFLICT`) so both stay possible. Maintain migrations per provider.
+- **DB is PostgreSQL via EF Core.** Single provider — no SQL Server portability requirement (that was a company-specific need; dropped for the portfolio). Use EF Core normally; Postgres-specific features are fine. Cross-run cache lives in the DB, not process memory.
 
 ## Principles (every decision defers to these)
 
@@ -34,19 +36,18 @@ SpecTrace is an AI-assisted test-intelligence tool. It ingests CI test artifacts
 - Runtime: .NET 10 (LTS) / C# 14, EF Core 10
 - API/worker/core: .NET (`apps/api`, `apps/worker`, `src/SpecTrace.Core`)
 - CLI: native .NET console app (`apps/cli`) referencing `SpecTrace.Core` directly — no Node, no spawn
-- DB: EF Core. PostgreSQL for dev/test; SQL Server / Azure SQL as a config-swappable provider for company deployment
-- Optional: Redis (queue), S3/Azure Blob (artifacts)
-- CI: Azure DevOps first (test on your own ADO org), GitHub Actions second
+- DB: PostgreSQL via EF Core (single provider)
+- Optional: Redis (queue), S3-compatible/MinIO (artifacts)
+- CI: GitHub Actions primary (public, in-repo); Azure DevOps optional
 
 ## Working agreement
 
-- Work **one phase at a time**, in `TASKS.md` order. Don't start a phase until the prior phase's acceptance criteria pass (the one exception is the adoption-first ADO slice, called out in TASKS).
+- Work **one phase at a time**, in `TASKS.md` order. Don't start a phase until the prior phase's acceptance criteria pass.
 - Every AI call goes through `IAiPromptRunner` — never call a provider directly from a feature.
 - Every phase ships with its tests (see PLAN §7). AI tests use the mock provider; **no live model calls in unit/CI tests.**
 - Use the commit boundaries listed per phase. Conventional commits (`feat(...)`, `fix(...)`, `test(...)`, `docs(...)`, `chore(...)`).
 - Keep changes scoped to the current phase. If you find you need something from a later phase, note it in TASKS rather than building ahead.
 - Before any architectural deviation from PLAN/CONTRACTS, stop and propose it — don't silently diverge.
-- At the end of each phase, STOP: summarize what changed and confirm acceptance criteria pass. Do not start the next phase, and do not commit — wait for me to review and commit.
 
 ## Definition of done (per phase)
 
