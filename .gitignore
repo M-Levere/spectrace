@@ -1,0 +1,18 @@
+# node / next
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+# dotnet
+bin/
+obj/
+*.user
+# env / secrets
+.env
+.env.*
+*.key
+# spectrace local output
+spectrace.report.md
+spectrace.json
+# os
+.DS_Store

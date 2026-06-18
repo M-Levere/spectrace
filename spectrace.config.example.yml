@@ -1,0 +1,76 @@
+# spectrace.config.example.yml
+# Canonical config example. Schema-validated; the CLI fails fast on invalid config.
+
+project:
+  name: "my-service"
+  ciProvider: "azure-devops"        # azure-devops | github-actions
+
+artifacts:
+  paths:
+    - "test-results/**/*.xml"        # JUnit
+    - "**/*.trx"                     # .NET
+    - "playwright-report/**"         # playwright-bdd JSON reporter + traces
+    - "test-results/**/trace.zip"
+    - "test-results/**/*.png"        # screenshots
+  features:
+    - "tests/features/**/*.feature"  # playwright-bdd Gherkin sources
+    - "tests/steps/**/*.ts"          # step definitions
+
+source:
+  # Code is NOT sent to AI unless codeSuggestions or source-aware diagnosis is enabled.
+  include:
+    - "src/**"
+    - "tests/**"
+  exclude:
+    - "**/.env*"
+    - "**/secrets/**"
+    - "**/*.key"
+
+testFrameworks:
+  playwrightBdd: { enabled: true }
+  jest: { enabled: true }
+  dotnet: { enabled: true }
+
+ai:
+  diagnosis:
+    enabled: true
+    provider: "openai"               # openai | anthropic | gemini | azure-openai | local(later)
+    model: "cheap-fast-model"
+  codeSuggestions:
+    enabled: false                   # OFF by default — review-only when on, never auto-applied
+    provider: "anthropic"
+    model: "stronger-model"
+    maxFilesChanged: 2
+    maxPatchTokens: 3000
+    requireLowRiskOnly: true
+
+redaction:
+  enabled: true                      # runs before any AI call AND before persistence
+  extraPatterns:
+    - "(?i)password\\s*=\\s*\\S+"
+    - "(?i)bearer\\s+[a-z0-9._-]+"
+
+clustering:
+  enabled: true                      # within-run, by cause_signature
+  # set false (or pass --no-cluster) to diagnose every failure individually
+
+confidence:
+  prPublishThreshold: "high"         # PR comments: medium/high only; default high. low -> summary/dashboard only
+  minToShow: "low"                   # everything (incl. "needs review") shows in summary/dashboard
+
+cost:
+  perRunUsd: 1.00
+  perDayUsd: 20.00
+  onCapHit: "degrade-to-heuristic"   # degrade-to-heuristic | fail-build
+
+dashboard:
+  upload: false
+  url: ""                            # e.g. https://spectrace.internal
+  # token provided via SPECTRACE_TOKEN env var, never in this file
+
+output:
+  format: "md"                       # md | json
+  path: "spectrace.report.md"
+
+retention:
+  artifactDays: 14

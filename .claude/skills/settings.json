@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(git:*)",
+      "Bash(mkdir:*)",
+      "Bash(docker:*)",
+      "Edit(*)",
+      "Write(*)"
+    ],
+    "deny": ["Bash(rm:*)"]
+  }
+}
