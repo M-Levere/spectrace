@@ -1,0 +1,19 @@
+{
+  "name": "spectrace-demo-playwright-bdd",
+  "version": "1.0.0",
+  "description": "playwright-bdd demo for SpecTrace fixture generation",
+  "private": true,
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:passing": "bddgen && playwright test --grep \"login\"",
+    "test:selector-failure": "bddgen && playwright test --grep \"checkout\"",
+    "test:timeout": "bddgen && playwright test --grep \"search\"",
+    "test:assertion": "bddgen && playwright test --grep \"dashboard\"",
+    "test:flaky": "bddgen && playwright test --grep \"payment\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "playwright-bdd": "^8.0.0",
+    "typescript": "^5.6.0"
+  }
+}

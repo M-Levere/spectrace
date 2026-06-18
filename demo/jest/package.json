@@ -1,0 +1,21 @@
+{
+  "name": "spectrace-demo-jest",
+  "version": "1.0.0",
+  "description": "Jest demo for SpecTrace fixture generation",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:passing": "jest login",
+    "test:failing-assertion": "jest checkout",
+    "test:failing-timeout": "jest search",
+    "test:flaky": "jest payment"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "jest": "^29.7.0",
+    "jest-json-reporter": "^1.2.2",
+    "jest-junit": "^16.0.0",
+    "ts-jest": "^29.2.0",
+    "typescript": "^5.6.0"
+  }
+}
