@@ -54,6 +54,7 @@ SpecTrace is an AI-assisted test-intelligence tool. It ingests CI test artifacts
 - Tests written and passing; deterministic (no network/model dependence in CI).
 - No vendor SDK leaked past the AI provider boundary (architecture test enforces this from Phase 4).
 - Docs/examples updated where the phase changes output format.
+- `README.md` codebase map updated if the phase adds or removes top-level directories, new `src/` sub-packages, or new `apps/` entries.
 
 ## Do NOT (in MVP)
 
