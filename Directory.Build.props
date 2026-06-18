@@ -1,0 +1,20 @@
+<Project>
+  <!--
+    Disable the CodeCoverage path-mapping target (MsCoverageReferencedPathMaps) which uses
+    WriteLinesToFile with WriteOnlyWhenDifferent=true and intermittently fails with MSB3492
+    when the coverage mapping file is briefly locked by the OS/file indexer on Windows.
+    Coverage collection still works; only the deterministic source-path map is skipped.
+    See: microsoft.codecoverage/17.12.0/build/netstandard2.0/Microsoft.CodeCoverage.targets
+  -->
+  <PropertyGroup>
+    <DisableMsCoverageReferencedPathMaps>true</DisableMsCoverageReferencedPathMaps>
+    <!--
+      MSB3492 is thrown by WriteLinesToFile (WriteOnlyWhenDifferent=true) when the
+      GlobalUsings.g.cs file cannot be read immediately after being written in the
+      same process (restore + build in one call on .NET 10 SDK on Windows). The file
+      IS overwritten correctly; the error is spurious. Demote it to a message so the
+      Question-build phase does not abort the solution build.
+    -->
+    <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);MSB3492</MSBuildWarningsAsMessages>
+  </PropertyGroup>
+</Project>
